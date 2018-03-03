@@ -67,7 +67,6 @@
     <ClCompile Include="DonationDlg.cpp">
       <Filter>Application\Dialogs</Filter>
     </ClCompile>
-    <ClCompile Include="MyMultiDocTemplate.cpp" />
     <ClCompile Include="DropTarget.cpp">
       <Filter>Application</Filter>
     </ClCompile>
@@ -126,7 +125,6 @@
     <ClInclude Include="DonationDlg.h">
       <Filter>Application\Dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="MyMultiDocTemplate.h" />
     <ClInclude Include="DropTarget.h">
       <Filter>Application</Filter>
     </ClInclude>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -14,6 +14,7 @@
     <ProjectGuid>{EB9160EE-93DC-4845-A204-F59839A747F7}</ProjectGuid>
     <RootNamespace>drax</RootNamespace>
     <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -21,6 +22,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -28,6 +30,7 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -41,8 +44,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)..\bin\$(Configuration)\</OutDir>
-    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;</IncludePath>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IncludePath>$(SolutionDir)..\mp4v2\include;$(SolutionDir)..\mp4v2\vstudio2015\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -60,7 +63,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>libmp4v2.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\bin\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\mp4v2\bin\Windows-Win32\Debug</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -106,6 +109,7 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="ChildFrame.cpp" />
     <ClCompile Include="DonationDlg.cpp" />
+    <ClCompile Include="DropTarget.cpp" />
     <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="MovieDoc.cpp" />
     <ClCompile Include="ChaptersView.cpp" />
@@ -127,6 +131,7 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="ChildFrame.h" />
     <ClInclude Include="DonationDlg.h" />
+    <ClInclude Include="DropTarget.h" />
     <ClInclude Include="MainFrame.h" />
     <ClInclude Include="MovieDoc.h" />
     <ClInclude Include="ChaptersView.h" />
@@ -153,6 +158,12 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="drax.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\mp4v2\vstudio2015\libmp4v2\libmp4v2.vcxproj">
+      <Project>{bdb97a37-90b8-4906-bcab-663d983e33e3}</Project>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
